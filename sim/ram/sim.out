@@ -1,0 +1,172 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 11;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x56100a804bc0 .scope module, "sim_tb" "sim_tb" 2 3;
+ .timescale -9 -11;
+P_0x56100a804d50 .param/l "CLOCK_FREQUENCY_HZ" 1 2 15, +C4<00000010110111000110110000000000>;
+P_0x56100a804d90 .param/real "CLOCK_TIME_NS" 1 2 16, Cr<m5355555555555800gfc6>; value=20.8333
+P_0x56100a804dd0 .param/l "MICROSECOND" 1 2 10, +C4<00000000000000000000001111101000>;
+P_0x56100a804e10 .param/l "MILLISECOND" 1 2 9, +C4<00000000000011110100001001000000>;
+P_0x56100a804e50 .param/l "NANOSECOND" 1 2 11, +C4<00000000000000000000000000000001>;
+P_0x56100a804e90 .param/l "NANOSECOND_PER_SECOND" 1 2 12, +C4<00111011100110101100101000000000>;
+P_0x56100a804ed0 .param/real "PERIOD" 1 2 23, Cr<m53555714b9cb6800gfc5>; value=10.4167
+P_0x56100a804f10 .param/real "PULSE_WIDTH_NS" 1 2 18, Cr<m5355555555555800gfc5>; value=10.4167
+P_0x56100a804f50 .param/l "SECOND" 1 2 8, +C4<00111011100110101100101000000000>;
+P_0x56100a804f90 .param/l "SIM_DURATION_NS" 1 2 20, +C4<0000000000000000000000000000000000000000000011110100001001000000>;
+v0x56100a8200a0_0 .var "fpga_clk", 0 0;
+v0x56100a820160_0 .var "raddr", 7 0;
+v0x56100a820220_0 .net "rdata", 15 0, v0x56100a81f0c0_0;  1 drivers
+v0x56100a8202c0_0 .var "waddr", 7 0;
+v0x56100a8203d0_0 .var "wdata", 15 0;
+v0x56100a820530_0 .var "we", 0 0;
+S_0x56100a7c1cf0 .scope module, "ebr_I" "SB_RAM40_4K" 2 64, 3 2 0, S_0x56100a804bc0;
+ .timescale -9 -11;
+    .port_info 0 /INPUT 16 "WDATA";
+    .port_info 1 /INPUT 16 "MASK";
+    .port_info 2 /INPUT 8 "WADDR";
+    .port_info 3 /INPUT 1 "WE";
+    .port_info 4 /INPUT 1 "WCLK";
+    .port_info 5 /INPUT 1 "WCLKE";
+    .port_info 6 /INPUT 8 "RADDR";
+    .port_info 7 /INPUT 1 "RE";
+    .port_info 8 /INPUT 1 "RCLK";
+    .port_info 9 /INPUT 1 "RCLKE";
+    .port_info 10 /OUTPUT 16 "RDATA";
+P_0x56100a7c1ed0 .param/l "DATA_LEN" 0 3 25, +C4<00000000000000000000000100000000>;
+P_0x56100a7c1f10 .param/l "DATA_WIDTH" 0 3 20, +C4<00000000000000000000000000010000>;
+P_0x56100a7c1f50 .param/str "INIT_FILE" 0 3 3, "ifilegen/init.dat";
+P_0x56100a7c1f90 .param/l "READ_MODE" 0 3 5, +C4<00000000000000000000000000000000>;
+P_0x56100a7c1fd0 .param/l "WRITE_MODE" 0 3 4, +C4<00000000000000000000000000000000>;
+o0x7fb315ae02e8 .functor BUFZ 16, C4<zzzzzzzzzzzzzzzz>; HiZ drive
+v0x56100a81f6b0_0 .net "MASK", 15 0, o0x7fb315ae02e8;  0 drivers
+v0x56100a81f7b0_0 .net "RADDR", 7 0, v0x56100a820160_0;  1 drivers
+v0x56100a81f870_0 .net "RCLK", 0 0, v0x56100a8200a0_0;  1 drivers
+o0x7fb315ae0318 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56100a81f940_0 .net "RCLKE", 0 0, o0x7fb315ae0318;  0 drivers
+v0x56100a81f9e0_0 .net "RDATA", 15 0, v0x56100a81f0c0_0;  alias, 1 drivers
+L_0x7fb315a97018 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x56100a81fad0_0 .net "RE", 0 0, L_0x7fb315a97018;  1 drivers
+v0x56100a81fb70_0 .net "WADDR", 7 0, v0x56100a8202c0_0;  1 drivers
+v0x56100a81fc40_0 .net "WCLK", 0 0, v0x56100a8200a0_0;  alias, 1 drivers
+o0x7fb315ae0348 .functor BUFZ 1, C4<z>; HiZ drive
+v0x56100a81fce0_0 .net "WCLKE", 0 0, o0x7fb315ae0348;  0 drivers
+v0x56100a81fd80_0 .net "WDATA", 15 0, v0x56100a8203d0_0;  1 drivers
+v0x56100a81fe50_0 .net "WE", 0 0, v0x56100a820530_0;  1 drivers
+S_0x56100a7ffd60 .scope module, "raminst" "ram" 3 34, 3 47 0, S_0x56100a7c1cf0;
+ .timescale -9 -11;
+    .port_info 0 /INPUT 1 "w_clk";
+    .port_info 1 /INPUT 1 "r_clk";
+    .port_info 2 /INPUT 1 "w_en";
+    .port_info 3 /INPUT 1 "r_en";
+    .port_info 4 /INPUT 8 "r_addr";
+    .port_info 5 /INPUT 8 "w_addr";
+    .port_info 6 /OUTPUT 16 "r_data";
+    .port_info 7 /INPUT 16 "w_data";
+P_0x56100a7fff40 .param/l "DATA_LEN" 0 3 48, +C4<00000000000000000000000100000000>;
+P_0x56100a7fff80 .param/l "DATA_WIDTH" 0 3 49, +C4<00000000000000000000000000010000>;
+P_0x56100a7fffc0 .param/str "MEM_INIT_FILE" 0 3 50, "ifilegen/init.dat";
+v0x56100a8053a0 .array "mem", 255 0, 15 0;
+v0x56100a7ed6c0_0 .net "r_addr", 7 0, v0x56100a820160_0;  alias, 1 drivers
+v0x56100a81f020_0 .net "r_clk", 0 0, v0x56100a8200a0_0;  alias, 1 drivers
+v0x56100a81f0c0_0 .var "r_data", 15 0;
+v0x56100a81f1a0_0 .net "r_en", 0 0, L_0x7fb315a97018;  alias, 1 drivers
+v0x56100a81f2b0_0 .net "w_addr", 7 0, v0x56100a8202c0_0;  alias, 1 drivers
+v0x56100a81f390_0 .net "w_clk", 0 0, v0x56100a8200a0_0;  alias, 1 drivers
+v0x56100a81f430_0 .net "w_data", 15 0, v0x56100a8203d0_0;  alias, 1 drivers
+v0x56100a81f4f0_0 .net "w_en", 0 0, v0x56100a820530_0;  alias, 1 drivers
+E_0x56100a800a10 .event posedge, v0x56100a81f020_0;
+    .scope S_0x56100a7ffd60;
+T_0 ;
+    %vpi_call 3 66 "$readmemh", P_0x56100a7fffc0, v0x56100a8053a0 {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x56100a7ffd60;
+T_1 ;
+    %wait E_0x56100a800a10;
+    %load/vec4 v0x56100a81f4f0_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_1.0, 8;
+    %load/vec4 v0x56100a81f430_0;
+    %load/vec4 v0x56100a81f2b0_0;
+    %pad/u 10;
+    %ix/vec4 3;
+    %ix/load 4, 0, 0; Constant delay
+    %assign/vec4/a/d v0x56100a8053a0, 0, 4;
+T_1.0 ;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0x56100a7ffd60;
+T_2 ;
+    %wait E_0x56100a800a10;
+    %load/vec4 v0x56100a81f1a0_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_2.0, 8;
+    %load/vec4 v0x56100a7ed6c0_0;
+    %pad/u 10;
+    %ix/vec4 4;
+    %load/vec4a v0x56100a8053a0, 4;
+    %assign/vec4 v0x56100a81f0c0_0, 0;
+T_2.0 ;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_0x56100a804bc0;
+T_3 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x56100a8200a0_0, 0, 1;
+    %end;
+    .thread T_3;
+    .scope S_0x56100a804bc0;
+T_4 ;
+    %delay 1042, 0;
+    %load/vec4 v0x56100a8200a0_0;
+    %inv;
+    %store/vec4 v0x56100a8200a0_0, 0, 1;
+    %jmp T_4;
+    .thread T_4;
+    .scope S_0x56100a804bc0;
+T_5 ;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x56100a820530_0, 0;
+    %pushi/vec4 1, 0, 8;
+    %assign/vec4 v0x56100a820160_0, 0;
+    %delay 11458, 0;
+    %pushi/vec4 1, 0, 8;
+    %assign/vec4 v0x56100a8202c0_0, 0;
+    %pushi/vec4 51966, 0, 16;
+    %assign/vec4 v0x56100a8203d0_0, 0;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v0x56100a820530_0, 0;
+    %delay 100, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x56100a820530_0, 0;
+    %delay 2083, 0;
+    %pushi/vec4 2, 0, 8;
+    %assign/vec4 v0x56100a820160_0, 0;
+    %delay 2083, 0;
+    %pushi/vec4 1, 0, 8;
+    %assign/vec4 v0x56100a820160_0, 0;
+    %delay 3125, 0;
+    %pushi/vec4 255, 0, 8;
+    %assign/vec4 v0x56100a820160_0, 0;
+    %end;
+    .thread T_5;
+    .scope S_0x56100a804bc0;
+T_6 ;
+    %vpi_call 2 76 "$dumpfile", "sim.vcd" {0 0 0};
+    %vpi_call 2 77 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x56100a804bc0 {0 0 0};
+    %delay 100000000, 0;
+    %vpi_call 2 79 "$finish" {0 0 0};
+    %end;
+    .thread T_6;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "sim.v";
+    "../../rtl/bram.v";
